@@ -1,0 +1,288 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 18204,
+	"name": "Kruskal MST Visualisation",
+	"runtime": "c3",
+	"useWorker": false,
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r182.4",
+			"bundled": false
+		}
+	],
+	"uniqueId": "2snjscq1zjp",
+	"objectTypes": {
+		"items": [
+			"container",
+			"edge"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Keyboard",
+					"Mouse",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "plugins"
+			},
+			{
+				"items": [
+					"edges",
+					"tree",
+					"subSet"
+				],
+				"subfolders": [],
+				"name": "arrays"
+			},
+			{
+				"items": [
+					"nodeDegree",
+					"endNodeInput",
+					"startNodeInput",
+					"edgeWeight",
+					"edgeDistanceInput",
+					"edgeDistance",
+					"instructionText"
+				],
+				"subfolders": [],
+				"name": "text"
+			},
+			{
+				"items": [
+					"addEdge",
+					"Kruskal"
+				],
+				"subfolders": [],
+				"name": "buttons"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"main",
+			"assets"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"logic"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 602141253489762
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 994592861198684
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 472773929553095
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 512026101002311
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 901343412614703
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 664528391120856
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 829108599437610
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0",
+		"author": "Tariq Hamrit",
+		"authorEmail": "contact@qalamars.com",
+		"authorWebsite": "https://qalamars.com",
+		"appId": "",
+		"pixelRounding": false,
+		"useLoaderLayout": false,
+		"fullscreenMode": "scale-outer",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "landscape",
+		"enableWebGL": true,
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "percent",
+		"preloadSounds": true,
+		"clearBackground": true,
+		"enhancedAccelerationPrecision": true
+	},
+	"viewportWidth": 854,
+	"viewportHeight": 480,
+	"firstLayout": "main"
+}

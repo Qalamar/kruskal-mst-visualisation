@@ -1,0 +1,22 @@
+{
+	"name": "edgeDistance",
+	"plugin-id": "Text",
+	"sid": 177592548948464,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "degree",
+			"type": "number",
+			"desc": "",
+			"sid": 309443375760037
+		},
+		{
+			"name": "UUID",
+			"type": "number",
+			"desc": "",
+			"sid": 894414052821579
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

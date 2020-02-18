@@ -1,0 +1,28 @@
+{
+	"name": "edgeWeight",
+	"plugin-id": "Text",
+	"sid": 824159488986718,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "degree",
+			"type": "number",
+			"desc": "",
+			"sid": 510643849457468
+		},
+		{
+			"name": "color",
+			"type": "string",
+			"desc": "",
+			"sid": 501666887448425
+		},
+		{
+			"name": "adjVertex",
+			"type": "number",
+			"desc": "",
+			"sid": 408001794008417
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

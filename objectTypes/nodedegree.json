@@ -1,0 +1,22 @@
+{
+	"name": "nodeDegree",
+	"plugin-id": "Text",
+	"sid": 992391725247498,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "degree",
+			"type": "number",
+			"desc": "",
+			"sid": 262390536419347
+		},
+		{
+			"name": "UUID",
+			"type": "number",
+			"desc": "",
+			"sid": 929524148140066
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

@@ -1,0 +1,75 @@
+{
+	"name": "edge",
+	"plugin-id": "Sprite",
+	"sid": 801470384626777,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "start",
+			"type": "number",
+			"desc": "",
+			"sid": 238447588475632
+		},
+		{
+			"name": "end",
+			"type": "number",
+			"desc": "",
+			"sid": 382089513089959
+		},
+		{
+			"name": "weight",
+			"type": "number",
+			"desc": "",
+			"sid": 205780614595274
+		},
+		{
+			"name": "id",
+			"type": "number",
+			"desc": "",
+			"sid": 267976845750019
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 255126529624292
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.5,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 321987089531610,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,684 @@
+{
+	"name": "logic",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "nodeName",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 761044498122755
+		},
+		{
+			"eventType": "variable",
+			"name": "id",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 133452835070019
+		},
+		{
+			"eventType": "comment",
+			"text": "Create a vertexe"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 152478495433422,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "on-double-tap",
+					"objectClass": "Touch",
+					"sid": 608190913819644
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 910469346865163,
+					"parameters": {
+						"object-to-create": "container",
+						"layer": "0",
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "container",
+					"sid": 789187737547733,
+					"parameters": {
+						"object": "edgeWeight",
+						"layer": "0",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "container",
+					"sid": 975377762683174,
+					"parameters": {
+						"instance-variable": "UUID",
+						"value": "edgeWeight.UID"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 466116874943207,
+					"parameters": {
+						"object-to-create": "nodeDegree",
+						"layer": "0",
+						"x": "edgeWeight.X",
+						"y": "edgeWeight.Y-20"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "nodeDegree",
+					"sid": 739723843888918,
+					"parameters": {
+						"instance-variable": "UUID",
+						"value": "edgeWeight.UID"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "edgeWeight",
+					"sid": 212987003746792,
+					"parameters": {
+						"text": "nodeName"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 430214747916800,
+					"parameters": {
+						"variable": "nodeName",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 279303858328433,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "comment",
+			"text": "Create and edge between vertexes"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 928286485203563,
+					"parameters": {
+						"object": "edge"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 108347701486374,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 997817183010765,
+							"parameters": {
+								"object": "edgeWeight",
+								"expression": "edgeWeight.Text",
+								"comparison": 0,
+								"value": "str(edge.start)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "edge",
+							"sid": 296033692759822,
+							"parameters": {
+								"object": "edgeWeight",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 994877150465629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 589825556072077,
+							"parameters": {
+								"object": "edgeWeight",
+								"expression": "edgeWeight.Text",
+								"comparison": 0,
+								"value": "str(edge.end)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "edge",
+							"sid": 953949374016935,
+							"parameters": {
+								"x": "edgeWeight.X",
+								"y": "edgeWeight.Y"
+							}
+						}
+					],
+					"sid": 310125459514114
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 105696902149930,
+					"parameters": {
+						"object": "nodeDegree"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 181207945947915,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 430431128363739,
+							"parameters": {
+								"object": "edgeWeight",
+								"expression": "edgeWeight.UID",
+								"comparison": 0,
+								"value": "nodeDegree.UUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "nodeDegree",
+							"sid": 942955671692640,
+							"parameters": {
+								"text": "\"Degree: \"&edgeWeight.degree"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "nodeDegree",
+							"sid": 867260547519501,
+							"parameters": {
+								"x": "edgeWeight.X",
+								"y": "edgeWeight.Y-30"
+							}
+						}
+					],
+					"sid": 375728099280716
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 366550615961411,
+					"parameters": {
+						"object": "container"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 347158108540639,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 610338836631927,
+							"parameters": {
+								"object": "edgeWeight",
+								"expression": "edgeWeight.UID",
+								"comparison": 0,
+								"value": "container.UUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "edgeWeight",
+							"sid": 787477147176534,
+							"parameters": {
+								"object": "container",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 824954938400023
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 271766709770417,
+					"parameters": {
+						"object": "edgeDistance"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 565384196216910,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 832046606844177,
+							"parameters": {
+								"object": "edge",
+								"expression": "edge.UID",
+								"comparison": 0,
+								"value": "edgeDistance.UUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "edgeDistance",
+							"sid": 901370026664341,
+							"parameters": {
+								"text": "edge.weight"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "edgeDistance",
+							"sid": 778773130187194,
+							"parameters": {
+								"object": "edge",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "edgeDistance",
+							"sid": 126404505708576,
+							"parameters": {
+								"angle": "0"
+							}
+						}
+					],
+					"sid": 609414530421886
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 528858200469254
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-bottom",
+					"objectClass": "edge",
+					"sid": 283413340096746
+				}
+			],
+			"sid": 924777680138311
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "addEdge",
+					"sid": 769475878941636
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 359323668611336,
+					"parameters": {
+						"object-to-create": "edge",
+						"layer": "0",
+						"x": "0",
+						"y": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "edge",
+					"sid": 277010890705846,
+					"parameters": {
+						"instance-variable": "start",
+						"value": "startNodeInput.Text"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "edge",
+					"sid": 461406773790627,
+					"parameters": {
+						"instance-variable": "end",
+						"value": "endNodeInput.Text"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "edge",
+					"sid": 427274569728503,
+					"parameters": {
+						"instance-variable": "weight",
+						"value": "edgeDistanceInput.Text"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "edge",
+					"sid": 424005392537603,
+					"parameters": {
+						"instance-variable": "id",
+						"value": "id"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 506151504218577,
+					"parameters": {
+						"variable": "id",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 958548412378300,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "edge",
+					"sid": 107654358129086,
+					"parameters": {
+						"object": "edgeDistance",
+						"layer": "0",
+						"image-point": "1"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "edgeDistance",
+					"sid": 239922408383911,
+					"parameters": {
+						"instance-variable": "UUID",
+						"value": "edge.UID"
+					}
+				}
+			],
+			"sid": 785791967400500,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 364077959151099,
+							"parameters": {
+								"object": "edgeWeight",
+								"expression": "edgeWeight.Text",
+								"comparison": 0,
+								"value": "str(edge.start)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "edgeWeight",
+							"sid": 640022378397759,
+							"parameters": {
+								"instance-variable": "degree",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 960753104272503
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 435274373487051,
+							"parameters": {
+								"object": "edgeWeight",
+								"expression": "edgeWeight.Text",
+								"comparison": 0,
+								"value": "str(edge.end)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "edgeWeight",
+							"sid": 147618561914337,
+							"parameters": {
+								"instance-variable": "degree",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 257654911615925
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Kruskal",
+					"sid": 183208093976807
+				}
+			],
+			"actions": [],
+			"sid": 847869123480019,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 251712454023097,
+							"parameters": {
+								"object": "edge",
+								"expression": "edge.weight",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "edges",
+							"sid": 375858809750690,
+							"parameters": {
+								"key": "str(edge.id)",
+								"value": "edge.weight"
+							}
+						}
+					],
+					"sid": 465775817440013
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-key",
+							"objectClass": "edges",
+							"sid": 971387328399010
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 860820029047665,
+							"parameters": {
+								"object": "edge",
+								"expression": "edge.id",
+								"comparison": 0,
+								"value": "int(edges.CurrentKey)"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 162414414790653,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "subSet",
+									"sid": 361731448987867,
+									"parameters": {
+										"value": "edge.end"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "contains-value",
+									"objectClass": "subSet",
+									"sid": 369545506366549,
+									"parameters": {
+										"value": "edge.start"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "tree",
+									"sid": 220441314119915,
+									"parameters": {
+										"key": "edges.CurrentKey",
+										"value": "edges.CurrentValue"
+									}
+								},
+								{
+									"id": "push",
+									"objectClass": "subSet",
+									"sid": 850348490988544,
+									"parameters": {
+										"where": "front",
+										"value": "edge.end",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "push",
+									"objectClass": "subSet",
+									"sid": 260176268571797,
+									"parameters": {
+										"where": "front",
+										"value": "edge.start",
+										"axis": "x"
+									}
+								}
+							],
+							"sid": 127716962159212,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-key",
+							"objectClass": "tree",
+							"sid": 496549391767451
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 657036965170209,
+							"parameters": {
+								"object": "edge",
+								"expression": "edge.id",
+								"comparison": 0,
+								"value": "int(tree.CurrentKey)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "edge",
+							"sid": 138770273559017,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1000"
+							}
+						}
+					],
+					"sid": 540670716008906
+				}
+			]
+		}
+	],
+	"sid": 432835391940484
+}
