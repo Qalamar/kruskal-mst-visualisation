@@ -1,5 +1,9 @@
-![screenshot](https://i.imgur.com/JBl7bEN.gif)
+![screenshot](https://i.imgur.com/W2Ls61G.gif)
+
 ![screenshot](https://i.imgur.com/PA83JEE.gif)
+
+![screenshot](https://i.imgur.com/JBl7bEN.gif)
+
 
 
 # Kruskal MST Visualisation
